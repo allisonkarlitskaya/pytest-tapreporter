@@ -1,0 +1,20 @@
+name: tox
+on:
+  pull_request:
+  push:
+    branches: [ 'main' ]
+jobs:
+  venv:
+    permissions: {}
+
+    runs-on: ubuntu-latest
+    container: ghcr.io/allisonkarlitskaya/toxbox
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Run venv tests
+        run: runuser -u tox -- tox --colored=yes -m venv -- --color=yes

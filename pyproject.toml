@@ -1,0 +1,64 @@
+[tool.black]
+line-length = 118
+
+[tool.pylint]
+disable = [
+  'R0912', 'R0915',  #  Code complexity (test cases)
+  'C0114', 'C0115', 'C0116',  # Missing docstring
+  'C0301',  # Line too long
+]
+
+[tool.pytest.ini_options]
+
+[tool.ruff]
+line-length = 118
+
+[tool.vulture]
+ignore_decorators = [
+   "@pytest.hookimpl",
+]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = black,mypy,pycodestyle,pylint,ruff,pytest,vulture
+isolated_build = True
+labels =
+  venv = py311-{black,mypy,pycodestyle,pylint,ruff,vulture}, py3{11,10,9,8,7,6}-pytest
+
+# The default test environments use system packages and never PyPI.
+[testenv:{black,mypy,pycodestyle,ruff,pytest,vulture,pkg}]
+sitepackages = True
+install_command = python3 -m pip install --no-index --no-build-isolation {opts} {packages}
+wheel_build_env = pkg
+
+# All other environments (names like py311-mypy, py36-pytest, etc) are isolated
+# from the system and get their packages from PyPI, according to the specific
+# test environment being requested.  We build the wheel in a common environment.
+[testenv]
+package = wheel
+wheel_build_env = venv-pkg
+skip_install = True
+allowlist_externals = test/*
+deps =
+  black: black
+  mypy,pylint,pytest: pytest
+  mypy,pylint,pytest: syrupy
+  mypy,pylint,pytest: tap.py
+  mypy: mypy
+  pycodestyle: pycodestyle
+  pylint: pylint
+  pytest: PyYAML
+  pytest: more-itertools
+  pytest: pytest-xdist
+  ruff: ruff
+  vulture: vulture
+commands =
+  black: python3 -m black --check src test
+  mypy: python3 -m mypy --strict --allow-untyped-decorators src test
+  pycodestyle: python3 -m pycodestyle --max-line-length=118 src test
+  pylint: python3 -m pylint src test
+  pytest: python3 -m pytest {posargs}
+  ruff: python3 -m ruff check --no-cache src test
+  vulture: python3 -m vulture src test
+"""

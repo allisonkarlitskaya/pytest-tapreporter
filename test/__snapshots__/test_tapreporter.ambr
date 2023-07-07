@@ -1,0 +1,2031 @@
+# serializer version: 1
+# name: test_parsed
+  list([
+    Result(
+      description='- test/cases.py::TestNormal::test_pass',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_pass_output',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_fail',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestNormal object at ***>
+          
+              def test_fail(self) -> None:
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:12: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_fail_output',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestNormal object at ***>
+          
+              def test_fail_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:16: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_fail_reason',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestNormal object at ***>
+          
+              def test_fail_reason(self) -> None:
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:19: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_fail_reason_output',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestNormal object at ***>
+          
+              def test_fail_reason_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:23: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_raises',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestNormal object at ***>
+          
+              def test_raises(self) -> None:
+          >       assert False
+          E       assert False
+          
+          test/cases.py:26: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_raises_output',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestNormal object at ***>
+          
+              def test_raises_output(self) -> None:
+                  print("Hello world")
+          >       assert False
+          E       assert False
+          
+          test/cases.py:30: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_skip',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_skip_output',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestNormal::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_pass',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_pass_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_fail',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfail object at ***>
+          
+              def test_fail(self) -> None:
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:12: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_fail_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfail object at ***>
+          
+              def test_fail_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:16: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_fail_reason',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfail object at ***>
+          
+              def test_fail_reason(self) -> None:
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:19: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_fail_reason_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfail object at ***>
+          
+              def test_fail_reason_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:23: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_raises',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfail object at ***>
+          
+              def test_raises(self) -> None:
+          >       assert False
+          E       assert False
+          
+          test/cases.py:26: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_raises_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfail object at ***>
+          
+              def test_raises_output(self) -> None:
+                  print("Hello world")
+          >       assert False
+          E       assert False
+          
+          test/cases.py:30: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_skip',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_skip_output',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfail::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_pass',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'unexpected pass',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_pass_output',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'unexpected pass',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_fail',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfailStrict object at ***>
+          
+              def test_fail(self) -> None:
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:12: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_fail_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfailStrict object at ***>
+          
+              def test_fail_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:16: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_fail_reason',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfailStrict object at ***>
+          
+              def test_fail_reason(self) -> None:
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:19: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_fail_reason_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfailStrict object at ***>
+          
+              def test_fail_reason_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:23: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_raises',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfailStrict object at ***>
+          
+              def test_raises(self) -> None:
+          >       assert False
+          E       assert False
+          
+          test/cases.py:26: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_raises_output',
+      directive=Directive(
+        reason='',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfailStrict object at ***>
+          
+              def test_raises_output(self) -> None:
+                  print("Hello world")
+          >       assert False
+          E       assert False
+          
+          test/cases.py:30: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_skip',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_skip_output',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailStrict::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_pass',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_pass_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_fail',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfailReason object at ***>
+          
+              def test_fail(self) -> None:
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:12: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_fail_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfailReason object at ***>
+          
+              def test_fail_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:16: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_fail_reason',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfailReason object at ***>
+          
+              def test_fail_reason(self) -> None:
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:19: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_fail_reason_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfailReason object at ***>
+          
+              def test_fail_reason_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:23: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_raises',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfailReason object at ***>
+          
+              def test_raises(self) -> None:
+          >       assert False
+          E       assert False
+          
+          test/cases.py:26: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_raises_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfailReason object at ***>
+          
+              def test_raises_output(self) -> None:
+                  print("Hello world")
+          >       assert False
+          E       assert False
+          
+          test/cases.py:30: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_skip',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_skip_output',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReason::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_pass',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'unexpected pass',
+        'reason': 'needs work',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_pass_output',
+      directive=Directive(
+        reason=None,
+        skip=False,
+        todo=False,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'unexpected pass',
+        'reason': 'needs work',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_fail',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfailReasonStrict object at ***>
+          
+              def test_fail(self) -> None:
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:12: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_fail_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed',
+        'traceback': '''
+          self = <cases.TestXfailReasonStrict object at ***>
+          
+              def test_fail_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail()
+          E       Failed
+          
+          test/cases.py:16: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_fail_reason',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfailReasonStrict object at ***>
+          
+              def test_fail_reason(self) -> None:
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:19: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_fail_reason_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'Failed: broken',
+        'traceback': '''
+          self = <cases.TestXfailReasonStrict object at ***>
+          
+              def test_fail_reason_output(self) -> None:
+                  print("Hello world")
+          >       pytest.fail("broken")
+          E       Failed: broken
+          
+          test/cases.py:23: Failed
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_raises',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfailReasonStrict object at ***>
+          
+              def test_raises(self) -> None:
+          >       assert False
+          E       assert False
+          
+          test/cases.py:26: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_raises_output',
+      directive=Directive(
+        reason='needs work',
+        skip=False,
+        todo=True,
+      ),
+      ok=False,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+        'message': 'assert False',
+        'traceback': '''
+          self = <cases.TestXfailReasonStrict object at ***>
+          
+              def test_raises_output(self) -> None:
+                  print("Hello world")
+          >       assert False
+          E       assert False
+          
+          test/cases.py:30: AssertionError
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_skip',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_skip_output',
+      directive=Directive(
+        reason='',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestXfailReasonStrict::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=dict({
+        'Captured stdout call': '''
+          Hello world
+  
+        ''',
+      }),
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_pass',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_pass_output',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_fail',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_fail_output',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_fail_reason',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_fail_reason_output',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_raises',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_raises_output',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_skip',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_skip_output',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_skip_reason',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkip::test_skip_reason_output',
+      directive=Directive(
+        reason='unconditional skip',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_pass',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_pass_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_fail',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_fail_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_fail_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_fail_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_raises',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_raises_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_skip',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_skip_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipConditional::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_pass',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_pass_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_fail',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_fail_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_fail_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_fail_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_raises',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_raises_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_skip',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_skip_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_skip_reason',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+    Result(
+      description='- test/cases.py::TestSkipReason::test_skip_reason_output',
+      directive=Directive(
+        reason='not supported',
+        skip=True,
+        todo=False,
+      ),
+      ok=True,
+      yaml_block=None,
+    ),
+  ])
+# ---
+# name: test_text
+  '''
+  TAP version 14
+  1..96
+  ok 1 - test/cases.py::TestNormal::test_pass
+  ok 2 - test/cases.py::TestNormal::test_pass_output
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 3 - test/cases.py::TestNormal::test_fail
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestNormal object at ***>
+      
+          def test_fail(self) -> None:
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:12: Failed
+    ...
+  not ok 4 - test/cases.py::TestNormal::test_fail_output
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestNormal object at ***>
+      
+          def test_fail_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:16: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 5 - test/cases.py::TestNormal::test_fail_reason
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestNormal object at ***>
+      
+          def test_fail_reason(self) -> None:
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:19: Failed
+    ...
+  not ok 6 - test/cases.py::TestNormal::test_fail_reason_output
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestNormal object at ***>
+      
+          def test_fail_reason_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:23: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 7 - test/cases.py::TestNormal::test_raises
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestNormal object at ***>
+      
+          def test_raises(self) -> None:
+      >       assert False
+      E       assert False
+      
+      test/cases.py:26: AssertionError
+    ...
+  not ok 8 - test/cases.py::TestNormal::test_raises_output
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestNormal object at ***>
+      
+          def test_raises_output(self) -> None:
+              print("Hello world")
+      >       assert False
+      E       assert False
+      
+      test/cases.py:30: AssertionError
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 9 - test/cases.py::TestNormal::test_skip # SKIP
+  ok 10 - test/cases.py::TestNormal::test_skip_output # SKIP
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 11 - test/cases.py::TestNormal::test_skip_reason # SKIP not supported
+  ok 12 - test/cases.py::TestNormal::test_skip_reason_output # SKIP not supported
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 13 - test/cases.py::TestXfail::test_pass # TODO
+  ok 14 - test/cases.py::TestXfail::test_pass_output # TODO
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 15 - test/cases.py::TestXfail::test_fail # TODO
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfail object at ***>
+      
+          def test_fail(self) -> None:
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:12: Failed
+    ...
+  not ok 16 - test/cases.py::TestXfail::test_fail_output # TODO
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfail object at ***>
+      
+          def test_fail_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:16: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 17 - test/cases.py::TestXfail::test_fail_reason # TODO
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfail object at ***>
+      
+          def test_fail_reason(self) -> None:
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:19: Failed
+    ...
+  not ok 18 - test/cases.py::TestXfail::test_fail_reason_output # TODO
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfail object at ***>
+      
+          def test_fail_reason_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:23: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 19 - test/cases.py::TestXfail::test_raises # TODO
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfail object at ***>
+      
+          def test_raises(self) -> None:
+      >       assert False
+      E       assert False
+      
+      test/cases.py:26: AssertionError
+    ...
+  not ok 20 - test/cases.py::TestXfail::test_raises_output # TODO
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfail object at ***>
+      
+          def test_raises_output(self) -> None:
+              print("Hello world")
+      >       assert False
+      E       assert False
+      
+      test/cases.py:30: AssertionError
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 21 - test/cases.py::TestXfail::test_skip # SKIP
+  ok 22 - test/cases.py::TestXfail::test_skip_output # SKIP
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 23 - test/cases.py::TestXfail::test_skip_reason # SKIP not supported
+  ok 24 - test/cases.py::TestXfail::test_skip_reason_output # SKIP not supported
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 25 - test/cases.py::TestXfailStrict::test_pass
+    ---
+    message: "unexpected pass"
+    ...
+  not ok 26 - test/cases.py::TestXfailStrict::test_pass_output
+    ---
+    message: "unexpected pass"
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 27 - test/cases.py::TestXfailStrict::test_fail # TODO
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfailStrict object at ***>
+      
+          def test_fail(self) -> None:
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:12: Failed
+    ...
+  not ok 28 - test/cases.py::TestXfailStrict::test_fail_output # TODO
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfailStrict object at ***>
+      
+          def test_fail_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:16: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 29 - test/cases.py::TestXfailStrict::test_fail_reason # TODO
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfailStrict object at ***>
+      
+          def test_fail_reason(self) -> None:
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:19: Failed
+    ...
+  not ok 30 - test/cases.py::TestXfailStrict::test_fail_reason_output # TODO
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfailStrict object at ***>
+      
+          def test_fail_reason_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:23: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 31 - test/cases.py::TestXfailStrict::test_raises # TODO
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfailStrict object at ***>
+      
+          def test_raises(self) -> None:
+      >       assert False
+      E       assert False
+      
+      test/cases.py:26: AssertionError
+    ...
+  not ok 32 - test/cases.py::TestXfailStrict::test_raises_output # TODO
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfailStrict object at ***>
+      
+          def test_raises_output(self) -> None:
+              print("Hello world")
+      >       assert False
+      E       assert False
+      
+      test/cases.py:30: AssertionError
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 33 - test/cases.py::TestXfailStrict::test_skip # SKIP
+  ok 34 - test/cases.py::TestXfailStrict::test_skip_output # SKIP
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 35 - test/cases.py::TestXfailStrict::test_skip_reason # SKIP not supported
+  ok 36 - test/cases.py::TestXfailStrict::test_skip_reason_output # SKIP not supported
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 37 - test/cases.py::TestXfailReason::test_pass # TODO needs work
+  ok 38 - test/cases.py::TestXfailReason::test_pass_output # TODO needs work
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 39 - test/cases.py::TestXfailReason::test_fail # TODO needs work
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfailReason object at ***>
+      
+          def test_fail(self) -> None:
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:12: Failed
+    ...
+  not ok 40 - test/cases.py::TestXfailReason::test_fail_output # TODO needs work
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfailReason object at ***>
+      
+          def test_fail_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:16: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 41 - test/cases.py::TestXfailReason::test_fail_reason # TODO needs work
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfailReason object at ***>
+      
+          def test_fail_reason(self) -> None:
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:19: Failed
+    ...
+  not ok 42 - test/cases.py::TestXfailReason::test_fail_reason_output # TODO needs work
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfailReason object at ***>
+      
+          def test_fail_reason_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:23: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 43 - test/cases.py::TestXfailReason::test_raises # TODO needs work
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfailReason object at ***>
+      
+          def test_raises(self) -> None:
+      >       assert False
+      E       assert False
+      
+      test/cases.py:26: AssertionError
+    ...
+  not ok 44 - test/cases.py::TestXfailReason::test_raises_output # TODO needs work
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfailReason object at ***>
+      
+          def test_raises_output(self) -> None:
+              print("Hello world")
+      >       assert False
+      E       assert False
+      
+      test/cases.py:30: AssertionError
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 45 - test/cases.py::TestXfailReason::test_skip # SKIP
+  ok 46 - test/cases.py::TestXfailReason::test_skip_output # SKIP
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 47 - test/cases.py::TestXfailReason::test_skip_reason # SKIP not supported
+  ok 48 - test/cases.py::TestXfailReason::test_skip_reason_output # SKIP not supported
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 49 - test/cases.py::TestXfailReasonStrict::test_pass
+    ---
+    reason: "needs work"
+    message: "unexpected pass"
+    ...
+  not ok 50 - test/cases.py::TestXfailReasonStrict::test_pass_output
+    ---
+    reason: "needs work"
+    message: "unexpected pass"
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 51 - test/cases.py::TestXfailReasonStrict::test_fail # TODO needs work
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfailReasonStrict object at ***>
+      
+          def test_fail(self) -> None:
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:12: Failed
+    ...
+  not ok 52 - test/cases.py::TestXfailReasonStrict::test_fail_output # TODO needs work
+    ---
+    message: "Failed"
+    traceback: |+
+      self = <cases.TestXfailReasonStrict object at ***>
+      
+          def test_fail_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail()
+      E       Failed
+      
+      test/cases.py:16: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 53 - test/cases.py::TestXfailReasonStrict::test_fail_reason # TODO needs work
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfailReasonStrict object at ***>
+      
+          def test_fail_reason(self) -> None:
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:19: Failed
+    ...
+  not ok 54 - test/cases.py::TestXfailReasonStrict::test_fail_reason_output # TODO needs work
+    ---
+    message: "Failed: broken"
+    traceback: |+
+      self = <cases.TestXfailReasonStrict object at ***>
+      
+          def test_fail_reason_output(self) -> None:
+              print("Hello world")
+      >       pytest.fail("broken")
+      E       Failed: broken
+      
+      test/cases.py:23: Failed
+    Captured stdout call: |+
+      Hello world
+    ...
+  not ok 55 - test/cases.py::TestXfailReasonStrict::test_raises # TODO needs work
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfailReasonStrict object at ***>
+      
+          def test_raises(self) -> None:
+      >       assert False
+      E       assert False
+      
+      test/cases.py:26: AssertionError
+    ...
+  not ok 56 - test/cases.py::TestXfailReasonStrict::test_raises_output # TODO needs work
+    ---
+    message: "assert False"
+    traceback: |+
+      self = <cases.TestXfailReasonStrict object at ***>
+      
+          def test_raises_output(self) -> None:
+              print("Hello world")
+      >       assert False
+      E       assert False
+      
+      test/cases.py:30: AssertionError
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 57 - test/cases.py::TestXfailReasonStrict::test_skip # SKIP
+  ok 58 - test/cases.py::TestXfailReasonStrict::test_skip_output # SKIP
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 59 - test/cases.py::TestXfailReasonStrict::test_skip_reason # SKIP not supported
+  ok 60 - test/cases.py::TestXfailReasonStrict::test_skip_reason_output # SKIP not supported
+    ---
+    Captured stdout call: |+
+      Hello world
+    ...
+  ok 61 - test/cases.py::TestSkip::test_pass # SKIP unconditional skip
+  ok 62 - test/cases.py::TestSkip::test_pass_output # SKIP unconditional skip
+  ok 63 - test/cases.py::TestSkip::test_fail # SKIP unconditional skip
+  ok 64 - test/cases.py::TestSkip::test_fail_output # SKIP unconditional skip
+  ok 65 - test/cases.py::TestSkip::test_fail_reason # SKIP unconditional skip
+  ok 66 - test/cases.py::TestSkip::test_fail_reason_output # SKIP unconditional skip
+  ok 67 - test/cases.py::TestSkip::test_raises # SKIP unconditional skip
+  ok 68 - test/cases.py::TestSkip::test_raises_output # SKIP unconditional skip
+  ok 69 - test/cases.py::TestSkip::test_skip # SKIP unconditional skip
+  ok 70 - test/cases.py::TestSkip::test_skip_output # SKIP unconditional skip
+  ok 71 - test/cases.py::TestSkip::test_skip_reason # SKIP unconditional skip
+  ok 72 - test/cases.py::TestSkip::test_skip_reason_output # SKIP unconditional skip
+  ok 73 - test/cases.py::TestSkipConditional::test_pass # SKIP not supported
+  ok 74 - test/cases.py::TestSkipConditional::test_pass_output # SKIP not supported
+  ok 75 - test/cases.py::TestSkipConditional::test_fail # SKIP not supported
+  ok 76 - test/cases.py::TestSkipConditional::test_fail_output # SKIP not supported
+  ok 77 - test/cases.py::TestSkipConditional::test_fail_reason # SKIP not supported
+  ok 78 - test/cases.py::TestSkipConditional::test_fail_reason_output # SKIP not supported
+  ok 79 - test/cases.py::TestSkipConditional::test_raises # SKIP not supported
+  ok 80 - test/cases.py::TestSkipConditional::test_raises_output # SKIP not supported
+  ok 81 - test/cases.py::TestSkipConditional::test_skip # SKIP not supported
+  ok 82 - test/cases.py::TestSkipConditional::test_skip_output # SKIP not supported
+  ok 83 - test/cases.py::TestSkipConditional::test_skip_reason # SKIP not supported
+  ok 84 - test/cases.py::TestSkipConditional::test_skip_reason_output # SKIP not supported
+  ok 85 - test/cases.py::TestSkipReason::test_pass # SKIP not supported
+  ok 86 - test/cases.py::TestSkipReason::test_pass_output # SKIP not supported
+  ok 87 - test/cases.py::TestSkipReason::test_fail # SKIP not supported
+  ok 88 - test/cases.py::TestSkipReason::test_fail_output # SKIP not supported
+  ok 89 - test/cases.py::TestSkipReason::test_fail_reason # SKIP not supported
+  ok 90 - test/cases.py::TestSkipReason::test_fail_reason_output # SKIP not supported
+  ok 91 - test/cases.py::TestSkipReason::test_raises # SKIP not supported
+  ok 92 - test/cases.py::TestSkipReason::test_raises_output # SKIP not supported
+  ok 93 - test/cases.py::TestSkipReason::test_skip # SKIP not supported
+  ok 94 - test/cases.py::TestSkipReason::test_skip_output # SKIP not supported
+  ok 95 - test/cases.py::TestSkipReason::test_skip_reason # SKIP not supported
+  ok 96 - test/cases.py::TestSkipReason::test_skip_reason_output # SKIP not supported
+  
+  '''
+# ---
